@@ -52,6 +52,7 @@ We recommend to use `uv`, a Python manager for virtual environments and packages
         
 - c. Install the python module according to your solver. We'll use here [HiGHS open-source solver](https://highs.dev/)
             
+            ```powershell
             uv pip install highspy
             ```
 
