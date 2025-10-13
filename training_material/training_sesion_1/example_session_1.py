@@ -1,0 +1,41 @@
+# IMPORT SDOM MODULE
+import sdom
+
+from sdom import run_solver, initialize_model, configure_logging, get_default_solver_config_dict
+from sdom import load_data, export_results
+from pyomo.contrib.latex_printer import latex_printer
+
+import time
+import logging
+import highspy
+
+configure_logging(level=logging.INFO)
+n_steps = 730*1  # Number of steps in the simulation (IN HOURS - RECOMENDED = 8760)
+with_resilience_constraints = False # If True, the model will include resilience constraints, which ensure that the system can withstand certain disruptions or failures. If False, the model will not include these constraints.
+case = "br_test_daily_b" # Case name, used for naming output files
+
+data_dir = "sample_data\\br_test_daily_b\\" #INCLUDE THE FOLDER PATH WHERE YOU HAVE THE INPUT .CSV FILES SDOM REQUIRES (Python version does not requires txt files)
+data = load_data( data_dir ) 
+
+#THIS INNITIALIZES ALL SETS, PARAMETERS, VARIABLES, EXPRESIONS AND CONSTRAINTS IN THE MODEL. YOU CAN EXPLORE "model" variable to see the model that was builded
+# The sdom model is builded by blocks of components, such as thermal, hydro, pv, wind, storage, imports, exports, etc. Each block contains the variables, expressions and constraints related to that component.
+model = initialize_model( 
+    data, 
+    n_hours = n_steps, 
+    with_resilience_constraints = with_resilience_constraints 
+    )
+
+
+#Get a dictionary with default solver configurations
+solver_dict = get_default_solver_config_dict(
+    solver_name="highs", 
+    executable_path=""
+    )
+
+#Run the solver and get a solution.
+best_result = run_solver(model, solver_dict)
+
+if best_result:
+    export_results(model, case)
+else:
+    print(f"Solver did not find an optimal solution for given data and with resilience constraints = {with_resilience_constraints}, skipping result export.")
