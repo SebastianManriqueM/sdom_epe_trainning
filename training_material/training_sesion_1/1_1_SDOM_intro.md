@@ -39,49 +39,52 @@ We recommend to use `uv`, a Python manager for virtual environments and packages
 
 - a. Create a new virtual environment named `.venv`:
 
-            ```powershell
-            uv venv .venv
-            ```
-        This command creates a Python virtual environment in the `.venv` directory.
+  ```powershell
+  uv venv .venv
+  ```
+
+  This command creates a Python virtual environment in the `.venv` directory.
+
 
 - b. Activate your virtual environment and install the SDOM package:
 
-            ```powershell
-            uv pip install sdom
-            ```
+  ```powershell
+  uv pip install sdom
+  ```
         
 - c. Install the python module according to your solver. We'll use here [HiGHS open-source solver](https://highs.dev/)
             
-            ```powershell
-            uv pip install highspy
-            ```
+  ```powershell
+  uv pip install highspy
+  ```
 
 - d. Install the Logging package to be able to see sdom info, warning and error messages and log those:
 
-            ```powershell
-            uv pip install logging
-            ```
+  ```powershell
+  uv pip install logging
+  ```
 
 - e. Verify your environment by listing installed packages:
 
 
-            ```powershell
-            uv pip list
-            ```
+  ```powershell
+  uv pip list
+  ```
 
     You should see output similar to:
             
-            
-            Package         Version
-            --------------- -----------
-            highspy         1.11.0
-            logging         0.4.9.6
-            numpy           2.3.3
-            pandas          2.3.3
-            ply             3.11
-            pyomo           6.9.4
-            pytz            2025.2
-            sdom            0.0.7
-            six             1.17.0
-            tzdata          2025.2
-            ```
+  ```
+  Package         Version
+  --------------- -----------
+  highspy         1.11.0
+  logging         0.4.9.6
+  numpy           2.3.3
+  pandas          2.3.3
+  ply             3.11
+  pyomo           6.9.4
+  pytz            2025.2
+  sdom            0.0.7
+  six             1.17.0
+  tzdata          2025.2
+  ```
+
