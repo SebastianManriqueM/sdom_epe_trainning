@@ -3,9 +3,7 @@ import sdom
 
 from sdom import run_solver, initialize_model, configure_logging, get_default_solver_config_dict
 from sdom import load_data, export_results
-from pyomo.contrib.latex_printer import latex_printer
 
-import time
 import logging
 import highspy
 
