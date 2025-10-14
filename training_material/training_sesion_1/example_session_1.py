@@ -16,6 +16,7 @@ case = "br_test_daily_b" # Case name, used for naming output files
 
 data_dir = "sample_data\\br_test_daily_b\\" #INCLUDE THE FOLDER PATH WHERE YOU HAVE THE INPUT .CSV FILES SDOM REQUIRES (Python version does not requires txt files)
 data = load_data( data_dir ) 
+output_dir = f'./sample_results_{case}/'
 
 #THIS INNITIALIZES ALL SETS, PARAMETERS, VARIABLES, EXPRESIONS AND CONSTRAINTS IN THE MODEL. YOU CAN EXPLORE "model" variable to see the model that was builded
 # The sdom model is builded by blocks of components, such as thermal, hydro, pv, wind, storage, imports, exports, etc. Each block contains the variables, expressions and constraints related to that component.
@@ -36,6 +37,6 @@ solver_dict = get_default_solver_config_dict(
 best_result = run_solver(model, solver_dict)
 
 if best_result:
-    export_results(model, case)
+    export_results(model, case, output_dir=output_dir)
 else:
     print(f"Solver did not find an optimal solution for given data and with resilience constraints = {with_resilience_constraints}, skipping result export.")
