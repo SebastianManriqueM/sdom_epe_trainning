@@ -3,6 +3,7 @@
 - [Getting started with SDOM](#2-getting-started-with-sdom-and-requirements)
     - [SDOM requirements](#21-System-Setup-and-Prerequisites )
     - [Install SDOM](#22-install-sdom)
+- [Next Section - SDOM Inputs](#3-next-section---sdom-inputs)
 
 
 # 1. What is SDOM?
@@ -88,3 +89,5 @@ We recommend to use `uv`, a Python manager for virtual environments and packages
   tzdata          2025.2
   ```
 
+# 3. Next Section - SDOM Inputs
+Now, continue to the next section, [SDOM Inputs](training_material\training_sesion_1\1_2_SDOM_Inputs.md)

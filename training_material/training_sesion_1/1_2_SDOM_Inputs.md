@@ -16,6 +16,7 @@
     - [2.9. Imports/Exports (Optional files)](#29-importsexports-optional-files)
         - [2.9.1. Import_Cap.csv/Export_Cap.csv](#291-import_capcsvexport_capcsv)
         - [2.9.2. import_prices.csv/export_prices.csv](#292-import_pricescsvexport_pricescsv)
+- [3. Next Section - Getting Started: Running SDOM with a Python Script](#3-next-section---getting-started-running-sdom-with-a-python-script)
 
 # 1. Input Files Folder
 All the csv files you'll use in an SDOM simulation should be in one single folder. In this case, sample files are located at the route: "sample_data\br_test_daily_b".
@@ -242,3 +243,7 @@ These files contain
 |-----------------|-----------------------------------------------------------------------------------------------------|--------------|
 | *Hour           | Number of the hour of the year, from 1 to 8760 (You can teh number of hours you prefer).            |Int           |
 | Imports_price/Exports_price| The estimated hourly electricity price for importing/exporting energy in USD/MWh.        |float         |
+
+
+# 3. Next Section - Getting Started: Running SDOM with a Python Script
+Now, continue to the next section, [Getting Started: Running SDOM with a Python Script](training_material\training_sesion_1\1_3_Running_SDOM and outputs.md)

@@ -1,0 +1,19 @@
+\begin{align} 
+    & \text{s.t.} 
+    & & thermal.generation_{i,j} \leq thermal.plant\_installed\_capacity_{j} &  \qquad \forall i,j \in h \times thermal.plants\_set \label{con:thermal_thermal.capacity_generation_constraint} \\ 
+    & \text{w.b.} 
+    & & 83.82 \leq thermal.plant\_installed\_capacity[83c] \leq 83.82 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[83c]_bound} \\ 
+    &&& 80.52 \leq thermal.plant\_installed\_capacity[98c] \leq 80.52 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[98c]_bound} \\ 
+    &&& 9.69 \leq thermal.plant\_installed\_capacity[106c] \leq 9.69 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[106c]_bound} \\ 
+    &&& 26.5 \leq thermal.plant\_installed\_capacity[147c] \leq 26.5 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[147c]_bound} \\ 
+    &&& 138.72 \leq thermal.plant\_installed\_capacity[162c] \leq 138.72 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[162c]_bound} \\ 
+    &&& 340.71 \leq thermal.plant\_installed\_capacity[163c] \leq 340.71 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[163c]_bound} \\ 
+    &&& 646.11 \leq thermal.plant\_installed\_capacity[167c] \leq 646.11 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[167c]_bound} \\ 
+    &&& 316.3 \leq thermal.plant\_installed\_capacity[170c] \leq 316.3 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[170c]_bound} \\ 
+    &&&  0 \leq thermal.plant\_installed\_capacity[221c] = 0  & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[221c]_bound} \\ 
+    &&& 53.2 \leq thermal.plant\_installed\_capacity[223c] \leq 53.2 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[223c]_bound} \\ 
+    &&& 1358.78 \leq thermal.plant\_installed\_capacity[224c] \leq 1358.78 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[224c]_bound} \\ 
+    &&& 138.72 \leq thermal.plant\_installed\_capacity[235c] \leq 138.72 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[235c]_bound} \\ 
+    &&& 35.15 \leq thermal.plant\_installed\_capacity[241c] \leq 35.15 & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.plant_installed_capacity[241c]_bound} \\ 
+    &&&  0 \leq thermal.generation & \qquad \in \mathds{R}_{\geq 0} \label{con:thermal_thermal.generation_bound} 
+\end{align} 
