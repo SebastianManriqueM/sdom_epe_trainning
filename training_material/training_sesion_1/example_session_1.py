@@ -6,15 +6,23 @@ from sdom import load_data, export_results
 
 import logging
 import highspy
+import os
+import subprocess
 
 configure_logging(level=logging.INFO)
+
+current_folder = os.getcwd()
+print("Current folder:", current_folder)
+
+
+
 n_steps = 730*1  # Number of steps in the simulation (IN HOURS - RECOMENDED = 8760)
 with_resilience_constraints = False # If True, the model will include resilience constraints, which ensure that the system can withstand certain disruptions or failures. If False, the model will not include these constraints.
 case = "br_test_daily_b" # Case name, used for naming output files
 
-data_dir = "sample_data\\br_test_daily_b\\" #INCLUDE THE FOLDER PATH WHERE YOU HAVE THE INPUT .CSV FILES SDOM REQUIRES (Python version does not requires txt files)
+data_dir = os.path.join(current_folder, "sample_data", "br_test_daily_b") #INCLUDE THE FOLDER PATH WHERE YOU HAVE THE INPUT .CSV FILES SDOM REQUIRES (Python version does not requires txt files)
 data = load_data( data_dir ) 
-output_dir = f'./sample_results_{case}/'
+output_dir = os.path.join(current_folder, f'sample_results_{case}')
 
 #THIS INNITIALIZES ALL SETS, PARAMETERS, VARIABLES, EXPRESIONS AND CONSTRAINTS IN THE MODEL. YOU CAN EXPLORE "model" variable to see the model that was builded
 # The sdom model is builded by blocks of components, such as thermal, hydro, pv, wind, storage, imports, exports, etc. Each block contains the variables, expressions and constraints related to that component.
@@ -35,6 +43,11 @@ solver_dict = get_default_solver_config_dict(
 best_result = run_solver(model, solver_dict)
 
 if best_result:
-    export_results(model, case, output_dir=output_dir)
+    export_results(model, case, output_dir=output_dir+"\\")
 else:
     print(f"Solver did not find an optimal solution for given data and with resilience constraints = {with_resilience_constraints}, skipping result export.")
+
+# Call the script "plots_capacity_donut.py" using the local virtual environment's Python interpreter
+venv_python = os.path.join(current_folder, ".venv", "Scripts", "python.exe")
+script_path = os.path.join("training_material", "training_sesion_1", "plots_capacity_donut.py")
+subprocess.run([venv_python, script_path], check=True)
