@@ -26,7 +26,7 @@ An illustrative figure below shows the flow from inputs to optimization results,
 - a. You'll need to install [python](https://www.python.org/downloads/)
   - After the installation make sure the [python enviroment variable is set](https://realpython.com/add-python-to-path/).
 - b. Also, You'll need an IDE (Integrated Development Environment), we recommend to install [MS VS code](https://code.visualstudio.com/)
-- d. We alse recommend to install extensions such as:
+- c. We also recommend to install extensions such as:
   - [edit CSV](https://marketplace.visualstudio.com/items?itemName=janisdd.vscode-edit-csv): To edit and interact with input csv files for SDOM directly in vs code.
   - [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf): to read and see pdf files directly in vscode.
 
