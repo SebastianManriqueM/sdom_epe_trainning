@@ -35,18 +35,15 @@ capacity_n_labels = pd.concat([capacity_labels, capacity], axis=1)
 
 capacity_filtered = capacity_n_labels[capacity_n_labels['Optimal Value'] > 0]
 
-# Define fixed colors for generation technologies
-color_map = {
-    'Thermal': '#5E1688',
-    'Solar PV': '#FFC903',
-    'Wind': '#00B6EF'
-}
+color_map = {'Thermal': '#5E1688', 
+             'Solar PV': '#FFC903', 
+             'Wind': '#00B6EF'}
 
 # Define a list of colors for storage technologies
 storage_colors = ['#FF4A88', '#FF4741', '#CC0079', '#FF7FBB', '#7F7FFF', '#FFB347', '#47FFB3']
 
 # Add storage technologies to color_map dynamically
-for i, tech in enumerate(sto_capacity_label['Technology']):
+for i, tech in enumerate(sto_capacity_label_strings):
     color_map[tech] = storage_colors[i % len(storage_colors)]
  
 colors = [color_map[label] for label in capacity_filtered['Technology']]  
