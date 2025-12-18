@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="figs/NLR.png" alt="NLR Logo">
+</div>
+
 # Contents
 - [What is SDOM?](#1-what-is-sdom)
 - [Getting started with SDOM](#2-getting-started-with-sdom-and-requirements)
@@ -7,7 +11,7 @@
 
 
 # 1. What is SDOM?
-SDOM (Storage Deployment Optimization Model) is an open-source, high-resolution grid capacity-expansion framework developed by NREL. It’s purpose-built to optimize the storage portfolio considering diverse storage technologies, leveraging hourly temporal resolution and granular spatial representation of Variable Renewable Energy (VRE) sources such as solar and wind.
+SDOM (Storage Deployment Optimization Model) is an open-source, high-resolution grid capacity-expansion framework developed by NLR. It’s purpose-built to optimize the storage portfolio considering diverse storage technologies, leveraging hourly temporal resolution and granular spatial representation of Variable Renewable Energy (VRE) sources such as solar and wind.
 
 SDOM is particularly well-suited for figure out the required capacity to meet a carbon-free generation mix target by:
 - 📆 Evaluating long-duration and seasonal storage technologies
@@ -16,7 +20,7 @@ SDOM is particularly well-suited for figure out the required capacity to meet a 
 
 An illustrative figure below shows the flow from inputs to optimization results, enabling exploration of storage needs under varying renewable integration levels.
 
-![SDOM illustrative flow](training_sesion_1/SDOM_illustration.png)
+![SDOM illustrative flow](figs/SDOM_illustration.png)
 
 
 
@@ -35,16 +39,16 @@ An illustrative figure below shows the flow from inputs to optimization results,
 
 It is recommended to load the packages in a virtual enviroment. 
 
-We recommend to use `uv`, a Python manager for virtual environments and packages.  
+We recommend to use ``uv``, a Python manager for virtual environments and packages.  
 
 
-- a. Create a new virtual environment named `.venv`:
+- a. Create a new virtual environment named ``.venv``:
 
   ```powershell
   uv venv .venv
   ```
 
-  This command creates a Python virtual environment in the `.venv` directory.
+  This command creates a Python virtual environment in the ``.venv`` directory.
 
 
 - b. Activate your virtual environment and install the SDOM package:

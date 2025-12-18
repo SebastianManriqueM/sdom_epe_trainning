@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="figs/NLR.png" alt="NLR Logo">
+</div>
+
 # Contents
 
 - [1. Debugging and Exploring SDOM Pyomo Model](#1-debugging-and-exploring-sdom-pyomo-model)
@@ -5,7 +9,7 @@
     - [1.2. Pyomo Blocks](#12-pyomo-blocks)
     - [1.3. Discovering model names for parameters, expressions, constraints, etc](#13-discovering-model-names-for-parameters-expressions-constraints-etc)
     - [1.4. Exploring a parameter - model.thermal.heat_rate](#14-exploring-a-parameter---modelthermalheat_rate)
-    - [1.5. Exploring a Constraint - model.thermal.heat_rate](#15-exploring-a-constraint---modelthermalheat_rate)
+    - [1.5. Exploring a Constraint - model.thermal.capacity_generation_constraint](#15-exploring-a-constraint---model.thermal.capacity_generation_constraint)
 
 # 1. Debugging and Exploring SDOM Pyomo Model.
 

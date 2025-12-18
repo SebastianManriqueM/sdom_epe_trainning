@@ -1,5 +1,8 @@
+<div align="center">
+  <img src="figs/NLR.png" alt="NLR Logo">
+</div>
 
-# Table of Contents
+# Contents
 
 1. [Getting Started: Running SDOM with a Python Script](#1-getting-started-running-sdom-with-a-python-script)
 2. [Outputs](#2-outputs)

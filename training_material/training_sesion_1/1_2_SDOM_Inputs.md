@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="figs/NLR.png" alt="NLR Logo">
+</div>
+
 # Contents
 - [1. Input Files Folder](#1-input-files-folder)
 - [2. CSV input files](#2-csv-input-files)
@@ -88,7 +92,7 @@ This file lists all candidate sites for solar PV and wind energy deployment. For
 
 
 ### 2.2.2 CFSolar.csv/CFWind.csv
-This file defines the hourly solar/wind capacity factors for each one of the potential sites defined in 2.1.1. THis information can be obtained using, for instance [NREL SAM simulations](https://sam.nrel.gov/download.html) or [reV](https://www.nrel.gov/gis/renewable-energy-potential).
+This file defines the hourly solar/wind capacity factors for each one of the potential sites defined in 2.1.1. This information can be obtained using, for instance [NLR SAM simulations](https://sam.nrel.gov/download.html) or [reV](https://www.nrel.gov/gis/renewable-energy-potential).
 
 **CSV file columns:**
 | Field/Column    | Description                                                                                         |Expected type |
@@ -209,7 +213,7 @@ This CSV input file provides key technical and economic parameters for diverse e
 
 **Cost Data Sources**
 Some sources to get cost data for storage technologies are:
- - [NREL Annual Technology Baseline (ATB)](https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage)
+ - [NLR Annual Technology Baseline (ATB)](https://atb.nrel.gov/electricity/2024/utility-scale_battery_storage)
  - [PNNL “Energy Storage Cost and Performance Database v2024”](https://www.pnnl.gov/projects/esgc-cost-performance/download-reports)
 
 
