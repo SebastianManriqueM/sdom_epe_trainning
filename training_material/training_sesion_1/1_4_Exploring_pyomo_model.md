@@ -36,7 +36,7 @@ SDOM leverages on pyomo blocks to separate in different blocks the variables, pa
   - wind 
   - hydro
   - storage
-- Blocks containing onnly parameters (Do not include decision variables)
+- Blocks containing only parameters (Do not include any decision variables)
   - demand
   - nuclear
   - other_renewables

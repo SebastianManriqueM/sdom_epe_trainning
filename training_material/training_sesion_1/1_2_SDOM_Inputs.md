@@ -19,7 +19,7 @@
 - [3. Next Section - Getting Started: Running SDOM with a Python Script](#3-next-section---getting-started-running-sdom-with-a-python-script)
 
 # 1. Input Files Folder
-All the csv files you'll use in an SDOM simulation should be in one single folder. In this case, sample files are located at the route: "sample_data\br_test_daily_b".
+All the csv files you'll use in an SDOM optimization runs should be in one single folder. In this case, sample files are located at the route: "sample_data\br_test_daily_b".
 
 This folder will be specified as a string containing the path in sdom when you do:
 
@@ -32,7 +32,7 @@ In the next section each file will be listed and the data it is supossed to be i
 
 > **⚠️ Attention:**  
 >  - Make sure all required CSV files are present in the specified folder before starting the simulation.
->  - Please keep the root names of each file. For instance, in the sample files you can change "2025" for whatever you prefer, but keeping the root name. For example, for "CapSolar_2025.csv" file you need to keep the root name as "CapSolar".
+>  - Please keep the root names of each file. For instance, in the sample files you can change "2025" for whatever you prefer, but keeping the root name. For example, for "CapSolar_2025.csv" file you need to keep the root name as "CapSolar_".
 >  - Please do not change the column names of each csv files.
 
 # 2. CSV input files
@@ -41,7 +41,7 @@ In this section the SDOM input csv files will be grouped by technology, so all t
 
 ## 2.1. formulations.csv
 
-This file specifies the modeling approach (formulation) for each major system component in the SDOM simulation. Each row assigns a formulation to a component, determining how SDOM will represent its behavior and constraints during optimization.
+This file the user selects the modeling approach (formulation) for each major system component in the SDOM optimization model. Each row assigns a formulation to a component, determining how SDOM will represent its behavior and constraints during optimization.
 
 
 **Important Notes:**
@@ -93,11 +93,20 @@ This file defines the hourly solar/wind capacity factors for each one of the pot
 **CSV file columns:**
 | Field/Column    | Description                                                                                         |Expected type |
 |-----------------|-----------------------------------------------------------------------------------------------------|--------------|
-| Hour            | Number of the hour of the year, from 1 to 8760 (You can teh number of hours you prefer).            |Int           |
+| Hour            | Number of the hour of the year, from 1 to 8760 (You can choose the number of hours you prefer)*.            |Int           |
 | Col for each id | The estimated capacity factor at each hour of the year for each site in MWh/installed MW.          |float         |
 
 
+> **\*⚠️ Attention:**  
+>  - Ensure that your input files contain a number of hours equal to or greater than the `n_hours` parameter specified when calling the `initialize_model()` function:
 
+```
+model = initialize_model(
+    data,
+    n_hours=n_steps,
+    with_resilience_constraints=with_resilience_constraints
+)
+```
 ## 2.3. Data_BalancingUnits.csv
 
 This file contains essential data for thermal generation plants or aggregated units that participate in system balancing. Each row represents a plant or group of plants, specifying their technical and economic parameters required for SDOM optimization.
