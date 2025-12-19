@@ -29,9 +29,14 @@ output_dir = os.path.join(current_folder, f'sample_results_{case}')
 model = initialize_model( 
     data, 
     n_hours = n_steps, 
-    with_resilience_constraints = with_resilience_constraints 
+    with_resilience_constraints = with_resilience_constraints,
+    model_name='SDOM_training'
     )
 
+# UNCOMMENT TO ADD A SIMPLE CUSTOM CONSTRAINT
+# from pyomo.core import Var, Constraint, Expression
+# block = model.storage
+# block.min_Pinstalled_constraint = Constraint( block.j, rule = lambda m,j: m.Pdis[j] >= 500 )  # Set a minimum installed power capacity of 500 MW for the storage technology 'Li-Ion-4h'
 
 #Get a dictionary with default solver configurations
 solver_dict = get_default_solver_config_dict(
