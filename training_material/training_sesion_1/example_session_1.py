@@ -49,5 +49,6 @@ else:
 
 # Call the script "plots_capacity_donut.py" using the local virtual environment's Python interpreter
 venv_python = os.path.join(current_folder, ".venv", "Scripts", "python.exe")
-script_path = os.path.join("training_material", "training_sesion_1", "plots_capacity_donut.py")
+script_path = os.path.join("training_material", "training_sesion_1", "sdom_plots.py")
 subprocess.run([venv_python, script_path], check=True)
+a=1
